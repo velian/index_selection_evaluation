@@ -1,3 +1,4 @@
+import os
 from ..selection_algorithm import SelectionAlgorithm
 from ..workload import Workload
 from ..index import Index
@@ -6,8 +7,7 @@ import itertools
 import time
 
 # The maximum width of index candidates and the number of applicable indexes per query can be specified
-DEFAULT_PARAMETERS = {"max_index_width": 2, "max_indexes_per_query": 1}
-
+DEFAULT_PARAMETERS = {"max_index_width": 2, "max_indexes_per_query": 1, "target_path": 'cophy_data_files', 'benchmark': ''}
 
 class CoPhyAlgorithm(SelectionAlgorithm):
     def __init__(self, database_connector, parameters=None):
@@ -16,7 +16,7 @@ class CoPhyAlgorithm(SelectionAlgorithm):
         SelectionAlgorithm.__init__(self, database_connector, parameters,
                                     DEFAULT_PARAMETERS)
 
-    def _calculate_best_indexes(self, workload):
+    def _calculate_best_indexes(self, workload: Workload):
         logging.info('Creating AMPL input for CoPhy')
         logging.info('Parameters: ' + str(self.parameters))
 
@@ -55,38 +55,47 @@ class CoPhyAlgorithm(SelectionAlgorithm):
                     costs_for_index_combination[index_combination] = costs
                     for index in index_combination:
                         useful_indexes.add(index)
-        print(f'# what-if time: {time.time() - time_start}')
-        print(f'# cost_requests: {self.cost_evaluation.cost_requests}\tcache_hits: {self.cost_evaluation.cache_hits}')
 
-        # generate AMPL input
-        # sorted_useful_indexes = sorted(useful_indexes)
+        os.makedirs(f"{self.parameters['target_path']}/data", exist_ok=True)
+        with open(self.parameters['target_path'] + f'/data/{self.parameters["benchmark"]}_{self.parameters["max_index_width"]}_{self.parameters["max_indexes_per_query"]}.dat', 'w+') as file:
+            file.write(f'# what-if time: {time.time() - time_start}\n')
+            file.write(f'# cost_requests: {self.cost_evaluation.cost_requests}\tcache_hits: {self.cost_evaluation.cache_hits}\n')
+            # generate AMPL input
+            # sorted_useful_indexes = sorted(useful_indexes)
+            file.write('data;\n\n')
+            file.write(f'set INDEXES := 1..{len(useful_indexes)};\n')
+            file.write(f'set COMBINATIONS := 0..{len(costs_for_index_combination)};\n')
+            file.write('set QUERIES := ')
+            for num in workload.queries:
+                file.write(f' {num.nr}')
+            file.write(';\n')
 
-        # print size of index and determine index_ids, which are used in combinations
-        index_ids = {}
-        print('\nparam a :=')
-        for i, index in enumerate(sorted(useful_indexes)):
-            assert(index.estimated_size), "Index size must be set."
-            print(i + 1, index.estimated_size, f'# {index._column_names()}')
-            index_ids[index] = i + 1
-        print(';\n')
+            # print size of index and determine index_ids, which are used in combinations
+            index_ids = {}
+            file.write('\nparam a :=\n')
+            for i, index in enumerate(sorted(useful_indexes)):
+                assert(index.estimated_size), "Index size must be set."
+                file.write(f"{i + 1} {index.estimated_size} # {index._column_names()}\n")
+                index_ids[index] = i + 1
+            file.write(';\n\n')
 
-        # print index_ids per combination
-        # combi 0 := no index
-        print(f"set combi[0]:= ;")
-        for i, index_combination in enumerate(costs_for_index_combination):
-            index_id_list = [str(index_ids[index]) for index in index_combination]
-            print(f"set combi[{i + 1}]:= {' '.join(index_id_list)};")
-
-        # print costs per query and index_combination
-        print('\nparam f4 :=')
-        for query_id, query in enumerate(workload.queries):
-            # Print cost without indexes
-            print(query_id + 1, 0, COSTS_PER_QUERY_WITHOUT_INDEXES[query])
+            # print index_ids per combination
+            # combi 0 := no index
+            file.write(f"set combi[0]:= ;\n")
             for i, index_combination in enumerate(costs_for_index_combination):
-                costs = costs_for_index_combination[index_combination]
-                # print cost if they are lower than without indexes
-                if costs[query_id] < COSTS_PER_QUERY_WITHOUT_INDEXES[query]:
-                    print(query_id + 1, i + 1, costs[query_id])
-        print(';\n')
+                index_id_list = [str(index_ids[index]) for index in index_combination]
+                file.write(f"set combi[{i + 1}]:= {' '.join(index_id_list)};\n")
+
+            # print costs per query and index_combination
+            file.write('\nparam f4 :=\n')
+            for query_id, query in enumerate(workload.queries):
+                # Print cost without indexes
+                file.write(f'{query_id + 1} 0 {COSTS_PER_QUERY_WITHOUT_INDEXES[query]}\n')
+                for i, index_combination in enumerate(costs_for_index_combination):
+                    costs = costs_for_index_combination[index_combination]
+                    # print cost if they are lower than without indexes
+                    if costs[query_id] < COSTS_PER_QUERY_WITHOUT_INDEXES[query]:
+                        file.write(f'{query_id + 1} {i + 1} {costs[query_id]}\n')
+            file.write(';\n')
 
         return []
