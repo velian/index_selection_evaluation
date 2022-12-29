@@ -101,8 +101,8 @@ class IndexSelection:
         for algorithm_config in config["algorithms"]:
             # CoPhy must be skipped and manually executed via AMPL because it is not
             # integrated yet.
-            if algorithm_config["name"] == "cophy":
-                continue
+            # if algorithm_config["name"] == "cophy":
+            #    continue
 
             # There are multiple configs if there is a parameter list
             # configured (as a list in the .json file)
