@@ -58,13 +58,15 @@ class CoPhyAlgorithm(SelectionAlgorithm):
 
         os.makedirs(f"{self.parameters['target_path']}/data", exist_ok=True)
         with open(self.parameters['target_path'] + f'/data/{self.parameters["benchmark"]}_{self.parameters["max_index_width"]}_{self.parameters["max_indexes_per_query"]}.dat', 'w+') as file:
+            file.write(f'#{len(useful_indexes)}\n')
+            file.write(f'#{len(costs_for_index_combination)}\n')
             file.write(f'# what-if time: {time.time() - time_start}\n')
             file.write(f'# cost_requests: {self.cost_evaluation.cost_requests}\tcache_hits: {self.cost_evaluation.cache_hits}\n')
             # generate AMPL input
             # sorted_useful_indexes = sorted(useful_indexes)
             file.write('data;\n\n')
-            file.write(f'set INDEXES := 1..{len(useful_indexes)};\n')
-            file.write(f'set COMBINATIONS := 0..{len(costs_for_index_combination)};\n')
+            # file.write(f'set INDEXES := 1..{len(useful_indexes)};\n')
+            # file.write(f'set COMBINATIONS := 0..{len(costs_for_index_combination)};\n')
             file.write('set QUERIES := ')
             for num in workload.queries:
                 file.write(f' {num.nr}')

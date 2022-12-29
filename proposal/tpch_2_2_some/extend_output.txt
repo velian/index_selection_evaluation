@@ -1,0 +1,1514 @@
+INFO:root:Starting Index Selection Evaluation
+INFO:root:Using config file cophy_automated/config_tpch.json
+DEBUG:root:Database connector created: None
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: None
+DEBUG:root:Database with given scale factor already existing
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+INFO:root:Generating TPC-H Queries
+DEBUG:root:No need to run make
+INFO:root:Queries generated
+INFO:root:Dropping indexes
+INFO:root:Postgres: Run `analyze`
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'no_index', 'parameters': {}, 'timeout': 300}
+DEBUG:root:Total cost cache hits:	0
+DEBUG:root:Total cost requests:		0
+INFO:root:Indexes found: []
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'no_index', 'parameters': {}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1965851.6}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 2197469.96}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 517853.82}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 6718845.82}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 5174403.62}, {'Runtimes': [], 'Hits': [], 'Cost': 558160.75}]
+DEBUG:root:Overall Costs: 42828273.92999999
+INFO:root:Results written to benchmark_results/results_no_index_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 1000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 42380724.58999999	391.95MB
+DEBUG:root:new best cost and size: 42131380.0	391.95MB
+DEBUG:root:new best cost and size: 42426788.50999999	209.08MB
+DEBUG:root:Add index. Current cost savings: 0.937, initial 0.937. Current storage: 209084416.00
+DEBUG:root:new best cost and size: 41979239.16999999	601.03MB
+DEBUG:root:new best cost and size: 41729894.58	601.03MB
+DEBUG:root:Add index. Current cost savings: 1.643, initial 2.565. Current storage: 601030656.00
+DEBUG:root:new best cost and size: 41282345.239999995	992.98MB
+DEBUG:root:Add index. Current cost savings: 1.072, initial 3.610. Current storage: 992976896.00
+DEBUG:root:Total cost cache hits:	2137
+DEBUG:root:Total cost requests:		2451
+DEBUG:root:Cost cache hit ratio:	87.19%
+INFO:root:Indexes found: [I(C partsupp.ps_suppkey), I(C orders.o_orderkey), I(C orders.o_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 1000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1965851.6}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 6718845.82}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 4824001.66}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 41282345.239999995
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 2000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 34664156.519999996	1959.23MB
+DEBUG:root:new best cost and size: 34521369.58	1959.23MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:Total cost cache hits:	1848
+DEBUG:root:Total cost requests:		2147
+DEBUG:root:Cost cache hit ratio:	86.07%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 2000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 2197469.96}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 1976265.79}, {'Runtimes': [], 'Hits': [], 'Cost': 558160.75}]
+DEBUG:root:Overall Costs: 34710220.44
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 3000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 34664156.519999996	1959.23MB
+DEBUG:root:new best cost and size: 34521369.58	1959.23MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 34262671.099999994	2168.32MB
+DEBUG:root:new best cost and size: 34119884.16	2168.32MB
+DEBUG:root:Add index. Current cost savings: 1.701, initial 20.333. Current storage: 2168315904.00
+DEBUG:root:new best cost and size: 33672334.81999999	2560.26MB
+DEBUG:root:Add index. Current cost savings: 1.312, initial 21.378. Current storage: 2560262144.00
+DEBUG:root:new best cost and size: 33499652.109999996	2599.44MB
+DEBUG:root:Add index. Current cost savings: 0.513, initial 21.781. Current storage: 2599444480.00
+DEBUG:root:Total cost cache hits:	3730
+DEBUG:root:Total cost requests:		4199
+DEBUG:root:Cost cache hit ratio:	88.83%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C orders.o_orderkey), I(C orders.o_custkey), I(C customer.c_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 3000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1343171.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 33499652.109999996
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 4000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:Total cost cache hits:	3602
+DEBUG:root:Total cost requests:		4028
+DEBUG:root:Cost cache hit ratio:	89.42%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 4000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 558160.75}]
+DEBUG:root:Overall Costs: 31648033.319999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 5000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:Total cost cache hits:	5040
+DEBUG:root:Total cost requests:		5586
+DEBUG:root:Cost cache hit ratio:	90.23%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey), I(C orders.o_custkey), I(C customer.c_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 5000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1343171.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 31027801.269999996
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 6000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:Total cost cache hits:	5643
+DEBUG:root:Total cost requests:		6251
+DEBUG:root:Cost cache hit ratio:	90.27%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey), I(C orders.o_custkey), I(C customer.c_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 6000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1343171.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 31027801.269999996
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 7000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:Total cost cache hits:	5727
+DEBUG:root:Total cost requests:		6346
+DEBUG:root:Cost cache hit ratio:	90.25%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey), I(C orders.o_custkey), I(C customer.c_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 7000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1343171.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 31027801.269999996
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 8000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:Total cost cache hits:	5784
+DEBUG:root:Total cost requests:		6403
+DEBUG:root:Cost cache hit ratio:	90.33%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey), I(C orders.o_custkey), I(C customer.c_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 8000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1343171.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 31027801.269999996
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 9000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:Total cost cache hits:	5784
+DEBUG:root:Total cost requests:		6403
+DEBUG:root:Cost cache hit ratio:	90.33%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey), I(C orders.o_custkey), I(C customer.c_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 9000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1343171.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 31027801.269999996
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 10000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:Total cost cache hits:	5784
+DEBUG:root:Total cost requests:		6403
+DEBUG:root:Cost cache hit ratio:	90.33%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey), I(C orders.o_custkey), I(C customer.c_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 10000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1343171.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 31027801.269999996
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 11000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:Total cost cache hits:	5784
+DEBUG:root:Total cost requests:		6403
+DEBUG:root:Cost cache hit ratio:	90.33%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey), I(C orders.o_custkey), I(C customer.c_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 11000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1343171.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 31027801.269999996
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 12000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:Total cost cache hits:	5784
+DEBUG:root:Total cost requests:		6403
+DEBUG:root:Cost cache hit ratio:	90.33%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey), I(C orders.o_custkey), I(C customer.c_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 12000, 'max_index_width': 1, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1343171.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 31027801.269999996
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 1000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 42380724.58999999	391.95MB
+DEBUG:root:new best cost and size: 42131380.0	391.95MB
+DEBUG:root:new best cost and size: 42426788.50999999	209.08MB
+DEBUG:root:Add index. Current cost savings: 0.937, initial 0.937. Current storage: 209084416.00
+DEBUG:root:new best cost and size: 41979239.16999999	601.03MB
+DEBUG:root:new best cost and size: 41729894.58	601.03MB
+DEBUG:root:Add index. Current cost savings: 1.643, initial 2.565. Current storage: 601030656.00
+DEBUG:root:new best cost and size: 41282345.239999995	992.98MB
+DEBUG:root:Add index. Current cost savings: 1.072, initial 3.610. Current storage: 992976896.00
+DEBUG:root:Total cost cache hits:	2502
+DEBUG:root:Total cost requests:		3021
+DEBUG:root:Cost cache hit ratio:	82.82%
+INFO:root:Indexes found: [I(C partsupp.ps_suppkey), I(C orders.o_orderkey), I(C orders.o_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 1000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1965851.6}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 6718845.82}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 4824001.66}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 41282345.239999995
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 2000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 34664156.519999996	1959.23MB
+DEBUG:root:new best cost and size: 34521369.58	1959.23MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:Total cost cache hits:	2222
+DEBUG:root:Total cost requests:		2698
+DEBUG:root:Cost cache hit ratio:	82.36%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 2000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 2197469.96}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 1976265.79}, {'Runtimes': [], 'Hits': [], 'Cost': 558160.75}]
+DEBUG:root:Overall Costs: 34710220.44
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 3000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 34664156.519999996	1959.23MB
+DEBUG:root:new best cost and size: 34521369.58	1959.23MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 34262671.099999994	2168.32MB
+DEBUG:root:new best cost and size: 34119884.16	2168.32MB
+DEBUG:root:Add index. Current cost savings: 1.701, initial 20.333. Current storage: 2168315904.00
+DEBUG:root:new best cost and size: 33672334.81999999	2560.26MB
+DEBUG:root:Add index. Current cost savings: 1.312, initial 21.378. Current storage: 2560262144.00
+DEBUG:root:new best cost and size: 33499652.109999996	2599.44MB
+DEBUG:root:Add index. Current cost savings: 0.513, initial 21.781. Current storage: 2599444480.00
+DEBUG:root:new best cost and size: 33355292.529999997	2834.61MB
+DEBUG:root:Add index. Current cost savings: 0.431, initial 22.119. Current storage: 2834612224.00
+DEBUG:root:Total cost cache hits:	5907
+DEBUG:root:Total cost requests:		7581
+DEBUG:root:Cost cache hit ratio:	77.92%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C orders.o_orderkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 3000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 33355292.529999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 4000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:Total cost cache hits:	4806
+DEBUG:root:Total cost requests:		5814
+DEBUG:root:Cost cache hit ratio:	82.66%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 4000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 558160.75}]
+DEBUG:root:Overall Costs: 31648033.319999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 5000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30740237.569999997	4872.23MB
+DEBUG:root:Add index. Current cost savings: 0.464, initial 28.224. Current storage: 4872232960.00
+DEBUG:root:Total cost cache hits:	9507
+DEBUG:root:Total cost requests:		12008
+DEBUG:root:Cost cache hit ratio:	79.17%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 5000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850983.63}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30740237.569999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 6000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:Total cost cache hits:	11465
+DEBUG:root:Total cost requests:		14421
+DEBUG:root:Cost cache hit ratio:	79.5%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 6000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30364686.400000002
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 7000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30351537.57	6616.10MB
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:Total cost cache hits:	11940
+DEBUG:root:Total cost requests:		14972
+DEBUG:root:Cost cache hit ratio:	79.75%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 7000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30364686.400000002
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 8000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30369818.84	7458.10MB
+DEBUG:root:new best cost and size: 30351537.57	6616.10MB
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:new best cost and size: 30226614.73	7928.44MB
+DEBUG:root:new best cost and size: 30208333.45	7086.43MB
+DEBUG:root:Add index. Current cost savings: 0.515, initial 29.466. Current storage: 7086432256.00
+DEBUG:root:Total cost cache hits:	13272
+DEBUG:root:Total cost requests:		16758
+DEBUG:root:Cost cache hit ratio:	79.2%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority), I(C orders.o_custkey,C orders.o_orderkey,C orders.o_comment)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 8000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1777391.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1226832.99}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110928.39}]
+DEBUG:root:Overall Costs: 30208333.45
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 9000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30411099.38	8633.57MB
+DEBUG:root:new best cost and size: 30369818.84	7458.10MB
+DEBUG:root:new best cost and size: 30351537.57	6616.10MB
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:new best cost and size: 30226614.73	7928.44MB
+DEBUG:root:new best cost and size: 30208333.45	7086.43MB
+DEBUG:root:Add index. Current cost savings: 0.515, initial 29.466. Current storage: 7086432256.00
+DEBUG:root:Total cost cache hits:	13486
+DEBUG:root:Total cost requests:		17005
+DEBUG:root:Cost cache hit ratio:	79.31%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority), I(C orders.o_custkey,C orders.o_orderkey,C orders.o_comment)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 9000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1777391.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1226832.99}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110928.39}]
+DEBUG:root:Overall Costs: 30208333.45
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 10000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30411099.38	8633.57MB
+DEBUG:root:new best cost and size: 30369818.84	7458.10MB
+DEBUG:root:new best cost and size: 30351537.57	6616.10MB
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:new best cost and size: 30267895.259999998	9103.91MB
+DEBUG:root:new best cost and size: 30226614.73	7928.44MB
+DEBUG:root:new best cost and size: 30208333.45	7086.43MB
+DEBUG:root:Add index. Current cost savings: 0.515, initial 29.466. Current storage: 7086432256.00
+DEBUG:root:new best cost and size: 30070261.779999997	9202.27MB
+DEBUG:root:Add index. Current cost savings: 0.457, initial 29.789. Current storage: 9202270208.00
+DEBUG:root:Total cost cache hits:	14508
+DEBUG:root:Total cost requests:		18240
+DEBUG:root:Cost cache hit ratio:	79.54%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_orderkey,C orders.o_orderpriority), I(C orders.o_custkey,C orders.o_orderkey,C orders.o_comment), I(C lineitem.l_partkey,C lineitem.l_suppkey,C lineitem.l_shipmode)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 10000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1777391.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1113290.85}, {'Runtimes': [], 'Hits': [], 'Cost': 1527981.1}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1226832.99}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 134310.1}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110928.39}]
+DEBUG:root:Overall Costs: 30070261.779999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 11000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30411099.38	8633.57MB
+DEBUG:root:new best cost and size: 30369818.84	7458.10MB
+DEBUG:root:new best cost and size: 30351537.57	6616.10MB
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:new best cost and size: 30267895.259999998	9103.91MB
+DEBUG:root:new best cost and size: 30226614.73	7928.44MB
+DEBUG:root:new best cost and size: 30208333.45	7086.43MB
+DEBUG:root:Add index. Current cost savings: 0.515, initial 29.466. Current storage: 7086432256.00
+DEBUG:root:new best cost and size: 30111542.309999995	10377.74MB
+DEBUG:root:new best cost and size: 30070261.779999997	9202.27MB
+DEBUG:root:Add index. Current cost savings: 0.457, initial 29.789. Current storage: 9202270208.00
+DEBUG:root:Total cost cache hits:	14709
+DEBUG:root:Total cost requests:		18468
+DEBUG:root:Cost cache hit ratio:	79.65%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_orderkey,C orders.o_orderpriority), I(C orders.o_custkey,C orders.o_orderkey,C orders.o_comment), I(C lineitem.l_partkey,C lineitem.l_suppkey,C lineitem.l_shipmode)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 11000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1777391.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1113290.85}, {'Runtimes': [], 'Hits': [], 'Cost': 1527981.1}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1226832.99}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 134310.1}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110928.39}]
+DEBUG:root:Overall Costs: 30070261.779999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 12000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30411099.38	8633.57MB
+DEBUG:root:new best cost and size: 30369818.84	7458.10MB
+DEBUG:root:new best cost and size: 30351537.57	6616.10MB
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:new best cost and size: 30267895.259999998	9103.91MB
+DEBUG:root:new best cost and size: 30226614.73	7928.44MB
+DEBUG:root:new best cost and size: 30208333.45	7086.43MB
+DEBUG:root:Add index. Current cost savings: 0.515, initial 29.466. Current storage: 7086432256.00
+DEBUG:root:new best cost and size: 30111542.309999995	10377.74MB
+DEBUG:root:new best cost and size: 30070261.779999997	9202.27MB
+DEBUG:root:Add index. Current cost savings: 0.457, initial 29.789. Current storage: 9202270208.00
+DEBUG:root:Total cost cache hits:	14738
+DEBUG:root:Total cost requests:		18506
+DEBUG:root:Cost cache hit ratio:	79.64%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_orderkey,C orders.o_orderpriority), I(C orders.o_custkey,C orders.o_orderkey,C orders.o_comment), I(C lineitem.l_partkey,C lineitem.l_suppkey,C lineitem.l_shipmode)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 12000, 'max_index_width': 3, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1777391.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1113290.85}, {'Runtimes': [], 'Hits': [], 'Cost': 1527981.1}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1226832.99}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 134310.1}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110928.39}]
+DEBUG:root:Overall Costs: 30070261.779999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 1000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 42380724.58999999	391.95MB
+DEBUG:root:new best cost and size: 42131380.0	391.95MB
+DEBUG:root:new best cost and size: 42426788.50999999	209.08MB
+DEBUG:root:Add index. Current cost savings: 0.937, initial 0.937. Current storage: 209084416.00
+DEBUG:root:new best cost and size: 41979239.16999999	601.03MB
+DEBUG:root:new best cost and size: 41729894.58	601.03MB
+DEBUG:root:Add index. Current cost savings: 1.643, initial 2.565. Current storage: 601030656.00
+DEBUG:root:new best cost and size: 41282345.239999995	992.98MB
+DEBUG:root:Add index. Current cost savings: 1.072, initial 3.610. Current storage: 992976896.00
+DEBUG:root:Total cost cache hits:	2502
+DEBUG:root:Total cost requests:		3021
+DEBUG:root:Cost cache hit ratio:	82.82%
+INFO:root:Indexes found: [I(C partsupp.ps_suppkey), I(C orders.o_orderkey), I(C orders.o_custkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 1000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1965851.6}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 6718845.82}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 4824001.66}, {'Runtimes': [], 'Hits': [], 'Cost': 110611.41}]
+DEBUG:root:Overall Costs: 41282345.239999995
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 2000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 34664156.519999996	1959.23MB
+DEBUG:root:new best cost and size: 34521369.58	1959.23MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:Total cost cache hits:	2222
+DEBUG:root:Total cost requests:		2698
+DEBUG:root:Cost cache hit ratio:	82.36%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 2000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 2197469.96}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 1976265.79}, {'Runtimes': [], 'Hits': [], 'Cost': 558160.75}]
+DEBUG:root:Overall Costs: 34710220.44
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 3000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 34664156.519999996	1959.23MB
+DEBUG:root:new best cost and size: 34521369.58	1959.23MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 34262671.099999994	2168.32MB
+DEBUG:root:new best cost and size: 34119884.16	2168.32MB
+DEBUG:root:Add index. Current cost savings: 1.701, initial 20.333. Current storage: 2168315904.00
+DEBUG:root:new best cost and size: 33672334.81999999	2560.26MB
+DEBUG:root:Add index. Current cost savings: 1.312, initial 21.378. Current storage: 2560262144.00
+DEBUG:root:new best cost and size: 33499652.109999996	2599.44MB
+DEBUG:root:Add index. Current cost savings: 0.513, initial 21.781. Current storage: 2599444480.00
+DEBUG:root:new best cost and size: 33355292.529999997	2834.61MB
+DEBUG:root:Add index. Current cost savings: 0.431, initial 22.119. Current storage: 2834612224.00
+DEBUG:root:Total cost cache hits:	5865
+DEBUG:root:Total cost requests:		7467
+DEBUG:root:Cost cache hit ratio:	78.55%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C orders.o_orderkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 3000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1956500.83}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 1953571.27}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 33355292.529999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 4000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:Total cost cache hits:	4806
+DEBUG:root:Total cost requests:		5814
+DEBUG:root:Cost cache hit ratio:	82.66%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C orders.o_orderkey)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 4000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1962082.54}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850977.99}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2180958.95}, {'Runtimes': [], 'Hits': [], 'Cost': 1515854.13}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.48}, {'Runtimes': [], 'Hits': [], 'Cost': 558160.75}]
+DEBUG:root:Overall Costs: 31648033.319999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 5000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30740237.569999997	4872.23MB
+DEBUG:root:Add index. Current cost savings: 0.464, initial 28.224. Current storage: 4872232960.00
+DEBUG:root:Total cost cache hits:	9370
+DEBUG:root:Total cost requests:		11666
+DEBUG:root:Cost cache hit ratio:	80.32%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C lineitem.l_partkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 5000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1111206.19}, {'Runtimes': [], 'Hits': [], 'Cost': 1850983.63}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327015.07}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30740237.569999997
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 6000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:Total cost cache hits:	10991
+DEBUG:root:Total cost requests:		13509
+DEBUG:root:Cost cache hit ratio:	81.36%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 6000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30364686.400000002
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 7000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:Total cost cache hits:	11466
+DEBUG:root:Total cost requests:		14060
+DEBUG:root:Cost cache hit ratio:	81.55%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 7000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30364686.400000002
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 8000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:Total cost cache hits:	11786
+DEBUG:root:Total cost requests:		14421
+DEBUG:root:Cost cache hit ratio:	81.73%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 8000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30364686.400000002
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 9000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:Total cost cache hits:	11804
+DEBUG:root:Total cost requests:		14440
+DEBUG:root:Cost cache hit ratio:	81.75%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 9000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30364686.400000002
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 10000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:Total cost cache hits:	11823
+DEBUG:root:Total cost requests:		14459
+DEBUG:root:Cost cache hit ratio:	81.77%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 10000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30364686.400000002
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 11000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:Total cost cache hits:	11823
+DEBUG:root:Total cost requests:		14459
+DEBUG:root:Cost cache hit ratio:	81.77%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 11000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30364686.400000002
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv
+INFO:root:Dropping indexes
+INFO:root:Create new database connector (closing old)
+DEBUG:root:Database connector closed: indexselection_tpch___10
+DEBUG:root:Database connector created: indexselection_tpch___10
+INFO:root:Postgres: Set random seed `SELECT setseed(0.17)`
+DEBUG:root:Postgres connector created: indexselection_tpch___10
+DEBUG:root:Init selection algorithm
+INFO:root:Dropping indexes
+DEBUG:root:Init cost evaluation
+INFO:root:Cost estimation with whatif
+DEBUG:root:Init WhatIfIndexCreation
+INFO:root:Running algorithm {'name': 'extend', 'parameters': {'budget_MB': 12000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Calculating best indexes Extend
+DEBUG:root:new best cost and size: 35111705.86	1567.29MB
+DEBUG:root:Add index. Current cost savings: 18.017, initial 18.017. Current storage: 1567285248.00
+DEBUG:root:new best cost and size: 32639855.019999992	3134.57MB
+DEBUG:root:new best cost and size: 34710220.44	1776.37MB
+DEBUG:root:Add index. Current cost savings: 1.143, initial 18.955. Current storage: 1776369664.00
+DEBUG:root:new best cost and size: 32238369.599999994	3343.65MB
+DEBUG:root:Add index. Current cost savings: 7.121, initial 24.726. Current storage: 3343654912.00
+DEBUG:root:new best cost and size: 31790820.259999994	3735.60MB
+DEBUG:root:new best cost and size: 31648033.319999997	3735.60MB
+DEBUG:root:Add index. Current cost savings: 1.831, initial 26.105. Current storage: 3735601152.00
+DEBUG:root:new best cost and size: 31200483.979999997	4127.55MB
+DEBUG:root:Add index. Current cost savings: 1.414, initial 27.150. Current storage: 4127547392.00
+DEBUG:root:new best cost and size: 31027801.269999996	4166.73MB
+DEBUG:root:Add index. Current cost savings: 0.553, initial 27.553. Current storage: 4166729728.00
+DEBUG:root:new best cost and size: 30850942.77	6831.12MB
+DEBUG:root:new best cost and size: 30833811.03	5655.65MB
+DEBUG:root:new best cost and size: 30652250.1	5107.10MB
+DEBUG:root:new best cost and size: 30883441.69	4401.90MB
+DEBUG:root:Add index. Current cost savings: 0.465, initial 27.890. Current storage: 4401897472.00
+DEBUG:root:new best cost and size: 30706583.19	7066.29MB
+DEBUG:root:new best cost and size: 30689451.45	5890.82MB
+DEBUG:root:new best cost and size: 30507890.52	5342.27MB
+DEBUG:root:Add index. Current cost savings: 1.216, initial 28.767. Current storage: 5342265344.00
+DEBUG:root:new best cost and size: 30364686.400000002	5812.60MB
+DEBUG:root:Add index. Current cost savings: 0.469, initial 29.101. Current storage: 5812600832.00
+DEBUG:root:Total cost cache hits:	11823
+DEBUG:root:Total cost requests:		14459
+DEBUG:root:Cost cache hit ratio:	81.77%
+INFO:root:Indexes found: [I(C lineitem.l_orderkey), I(C partsupp.ps_suppkey), I(C customer.c_custkey), I(C orders.o_custkey,C orders.o_orderkey), I(C lineitem.l_partkey,C lineitem.l_suppkey), I(C orders.o_orderkey,C orders.o_orderpriority)]
+INFO:root:Dropping indexes
+INFO:root:Benchmark with config: {'name': 'extend', 'parameters': {'budget_MB': 12000, 'max_index_width': 2, 'min_cost_improvement': 1.003}, 'timeout': 300}
+INFO:root:Benchmark all queries
+DEBUG:root:Execution times: [{'Runtimes': [], 'Hits': [], 'Cost': 2299469.8}, {'Runtimes': [], 'Hits': [], 'Cost': 2697780.07}, {'Runtimes': [], 'Hits': [], 'Cost': 443055.88}, {'Runtimes': [], 'Hits': [], 'Cost': 2075283.24}, {'Runtimes': [], 'Hits': [], 'Cost': 1690342.08}, {'Runtimes': [], 'Hits': [], 'Cost': 1769738.42}, {'Runtimes': [], 'Hits': [], 'Cost': 1110887.45}, {'Runtimes': [], 'Hits': [], 'Cost': 1475712.38}, {'Runtimes': [], 'Hits': [], 'Cost': 2106298.28}, {'Runtimes': [], 'Hits': [], 'Cost': 116368.4}, {'Runtimes': [], 'Hits': [], 'Cost': 2037749.17}, {'Runtimes': [], 'Hits': [], 'Cost': 1391016.46}, {'Runtimes': [], 'Hits': [], 'Cost': 1582684.86}, {'Runtimes': [], 'Hits': [], 'Cost': 3244927.86}, {'Runtimes': [], 'Hits': [], 'Cost': 429934.45}, {'Runtimes': [], 'Hits': [], 'Cost': 3723211.3}, {'Runtimes': [], 'Hits': [], 'Cost': 327053.89}, {'Runtimes': [], 'Hits': [], 'Cost': 1732421.5}, {'Runtimes': [], 'Hits': [], 'Cost': 110750.91}]
+DEBUG:root:Overall Costs: 30364686.400000002
+INFO:root:Results written to benchmark_results/results_extend_tpch_19_queries.csv

@@ -44,5 +44,5 @@ class DropHeuristicAlgorithm(SelectionAlgorithm):
                     f"{len(remaining_indexes)} indexes remaining."
                 )
             )
-
+        print(self.cost_evaluation.get_relevant_indexes_cache())
         return remaining_indexes

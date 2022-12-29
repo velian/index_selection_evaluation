@@ -1,0 +1,160 @@
+---------------------
+Running tpcds_1_1_config.json data generation
+Generating Data took 31.458436965942383
+---------------------
+---------------------
+Running tpcds_2_1_config.json data generation
+Generating Data took 269.6997311115265
+---------------------
+---------------------
+solving tpcds_1_1_1000000000.dat
+Solving Data took 0.20525789260864258
+---------------------
+---------------------
+solving tpcds_1_1_10000000000.dat
+Solving Data took 0.19389820098876953
+---------------------
+---------------------
+solving tpcds_1_1_11000000000.dat
+Solving Data took 0.160538911819458
+---------------------
+---------------------
+solving tpcds_1_1_12000000000.dat
+Solving Data took 0.14777803421020508
+---------------------
+---------------------
+solving tpcds_1_1_2000000000.dat
+Solving Data took 0.15312790870666504
+---------------------
+---------------------
+solving tpcds_1_1_3000000000.dat
+Solving Data took 0.15068697929382324
+---------------------
+---------------------
+solving tpcds_1_1_4000000000.dat
+Solving Data took 0.1587071418762207
+---------------------
+---------------------
+solving tpcds_1_1_5000000000.dat
+Solving Data took 0.15698504447937012
+---------------------
+---------------------
+solving tpcds_1_1_6000000000.dat
+Solving Data took 0.17220711708068848
+---------------------
+---------------------
+solving tpcds_1_1_7000000000.dat
+Solving Data took 0.18877911567687988
+---------------------
+---------------------
+solving tpcds_1_1_8000000000.dat
+Solving Data took 0.15629911422729492
+---------------------
+---------------------
+solving tpcds_1_1_9000000000.dat
+Solving Data took 0.14389514923095703
+---------------------
+---------------------
+solving tpcds_2_1_1000000000.dat
+Solving Data took 12.85841703414917
+---------------------
+---------------------
+solving tpcds_2_1_10000000000.dat
+Solving Data took 4.393906116485596
+---------------------
+---------------------
+solving tpcds_2_1_11000000000.dat
+Solving Data took 4.625592231750488
+---------------------
+---------------------
+solving tpcds_2_1_12000000000.dat
+Solving Data took 11.112042903900146
+---------------------
+---------------------
+solving tpcds_2_1_2000000000.dat
+Solving Data took 9.226322889328003
+---------------------
+---------------------
+solving tpcds_2_1_3000000000.dat
+Solving Data took 10.473623037338257
+---------------------
+---------------------
+solving tpcds_2_1_4000000000.dat
+Solving Data took 4.482686996459961
+---------------------
+---------------------
+solving tpcds_2_1_5000000000.dat
+Solving Data took 4.838454008102417
+---------------------
+---------------------
+solving tpcds_2_1_6000000000.dat
+Solving Data took 8.926592111587524
+---------------------
+---------------------
+solving tpcds_2_1_7000000000.dat
+Solving Data took 4.688634872436523
+---------------------
+---------------------
+solving tpcds_2_1_8000000000.dat
+Solving Data took 5.0660929679870605
+---------------------
+---------------------
+solving tpcds_2_1_9000000000.dat
+Solving Data took 9.528156280517578
+---------------------
+---------------------
+Running tpcds_1_2_config.json data generation
+Generating Data took 275.79721212387085
+---------------------
+---------------------
+solving tpcds_1_2_1000000000.dat
+Solving Data took 625.6215589046478
+---------------------
+---------------------
+solving tpcds_1_2_10000000000.dat
+Solving Data took 474.0988531112671
+---------------------
+---------------------
+solving tpcds_1_2_11000000000.dat
+Solving Data took 297.0404009819031
+---------------------
+---------------------
+solving tpcds_1_2_12000000000.dat
+Solving Data took 137.10115098953247
+---------------------
+---------------------
+solving tpcds_1_2_2000000000.dat
+Solving Data took 3084.5378460884094
+---------------------
+---------------------
+solving tpcds_1_2_3000000000.dat
+Solving Data took 1179.1478552818298
+---------------------
+---------------------
+solving tpcds_1_2_4000000000.dat
+Solving Data took 787.3503563404083
+---------------------
+---------------------
+solving tpcds_1_2_5000000000.dat
+Solving Data took 928.5565440654755
+---------------------
+---------------------
+solving tpcds_1_2_6000000000.dat
+Solving Data took 627.0023381710052
+---------------------
+---------------------
+solving tpcds_1_2_7000000000.dat
+Traceback (most recent call last):
+  File "/Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy_automated.py", line 87, in <module>
+    subprocess.run([amplpath, Path(modelpath).absolute(), Path(path + '/data/' + data_file).absolute(), Path(runpath).absolute()],stdout=outfile)
+  File "/Users/Julius/.pyenv/versions/3.10.4/lib/python3.10/subprocess.py", line 503, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/Users/Julius/.pyenv/versions/3.10.4/lib/python3.10/subprocess.py", line 1141, in communicate
+    self.wait()
+  File "/Users/Julius/.pyenv/versions/3.10.4/lib/python3.10/subprocess.py", line 1204, in wait
+    return self._wait(timeout=timeout)
+  File "/Users/Julius/.pyenv/versions/3.10.4/lib/python3.10/subprocess.py", line 1938, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/Users/Julius/.pyenv/versions/3.10.4/lib/python3.10/subprocess.py", line 1896, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt

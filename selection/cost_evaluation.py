@@ -140,3 +140,7 @@ class CostEvaluation:
             x for x in indexes if any(c in query.columns for c in x.columns)
         ]
         return frozenset(relevant_indexes)
+
+    def get_relevant_indexes_cache(self):
+        print('GGGGGGGGGGGGGGG')
+        print(len(self.relevant_indexes_cache))

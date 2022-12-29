@@ -61,5 +61,7 @@ def generate_queries(number: int) -> List[int]:
     queries = []
     for i in range(0, number):
         # +1 ensures that its 1 - number
+        if i + 1 in [2, 17, 20]:
+            continue
         queries.append(i + 1)
     return queries

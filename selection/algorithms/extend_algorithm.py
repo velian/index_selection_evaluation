@@ -1,5 +1,7 @@
 import logging
 
+from selection.workload import Workload
+
 from ..index import Index
 from ..selection_algorithm import DEFAULT_PARAMETER_VALUES, SelectionAlgorithm
 from ..utils import b_to_mb, mb_to_b
@@ -34,7 +36,7 @@ class ExtendAlgorithm(SelectionAlgorithm):
         self.workload = None
         self.min_cost_improvement = self.parameters["min_cost_improvement"]
 
-    def _calculate_best_indexes(self, workload):
+    def _calculate_best_indexes(self, workload: Workload):
         logging.info("Calculating best indexes Extend")
         self.workload = workload
         single_attribute_index_candidates = self.workload.potential_indexes()

@@ -1,27 +1,13 @@
+set INDEXES = 1..20;
+set COMBINATIONS = 0..20;
+
+#425
+#41373
+
 set QUERIES;
-
-## TPC-H
-# 3 1
-# set INDEXES = 1..1215;
-# set COMBINATIONS = 0..1215;
-
-## TPC-DS
-# 2 1
-# set INDEXES = 1..1503;
-# set COMBINATIONS = 0..1503;
-
-## JOB
-# 3 1
-# set INDEXES = 1..630;
-# set COMBINATIONS = 0..630;
-
-param budget;
-
-set INDEXES;
-set COMBINATIONS;
-
 set combi {COMBINATIONS};
 
+param budget;
 param a {INDEXES}; # size of index
 param f4 {QUERIES, COMBINATIONS} default 99999999999; # costs of combination for query
 

@@ -1,0 +1,592 @@
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	5 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 2 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	152 invalid subscripts discarded:
+	f4[2,0]
+	f4[17,0]
+	f4[17,2]
+	and 149 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	29 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[17,0]
+	and 26 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+Error at _cmdno 2 executing "solve" command
+(file /Users/Julius/masterarbeit/J-Index-Selection/cophy_automated/cophy.run, line 2, offset 64):
+error processing param f4:
+	11144 invalid subscripts discarded:
+	f4[2,0]
+	f4[2,20]
+	f4[2,186]
+	and 11141 more.
+---------------------
+Running tpch_2_1_config.json data generation
+Generating Data took 16.622548818588257
+---------------------
+---------------------
+Running tpch_1_1_config.json data generation
+Generating Data took 13.774625062942505
+---------------------
+---------------------
+Running tpch_1_2_config.json data generation
+Generating Data took 15.596157312393188
+---------------------
+---------------------
+Running tpch_2_2_config.json data generation
+Generating Data took 290.46707105636597
+---------------------
+---------------------
+solving tpch_1_1_1000000000.dat
+Solving Data took 0.17856717109680176
+---------------------
+---------------------
+solving tpch_1_1_10000000000.dat
+Solving Data took 0.02035808563232422
+---------------------
+---------------------
+solving tpch_1_1_11000000000.dat
+Solving Data took 0.02199697494506836
+---------------------
+---------------------
+solving tpch_1_1_12000000000.dat
+Solving Data took 0.02051687240600586
+---------------------
+---------------------
+solving tpch_1_1_2000000000.dat
+Solving Data took 0.02115035057067871
+---------------------
+---------------------
+solving tpch_1_1_3000000000.dat
+Solving Data took 0.020946979522705078
+---------------------
+---------------------
+solving tpch_1_1_4000000000.dat
+Solving Data took 0.021513938903808594
+---------------------
+---------------------
+solving tpch_1_1_5000000000.dat
+Solving Data took 0.023059844970703125
+---------------------
+---------------------
+solving tpch_1_1_6000000000.dat
+Solving Data took 0.020441055297851562
+---------------------
+---------------------
+solving tpch_1_1_7000000000.dat
+Solving Data took 0.02033686637878418
+---------------------
+---------------------
+solving tpch_1_1_8000000000.dat
+Solving Data took 0.02072906494140625
+---------------------
+---------------------
+solving tpch_1_1_9000000000.dat
+Solving Data took 0.02086615562438965
+---------------------
+---------------------
+solving tpch_1_2_1000000000.dat
+Solving Data took 0.09824180603027344
+---------------------
+---------------------
+solving tpch_1_2_10000000000.dat
+Solving Data took 0.1435871124267578
+---------------------
+---------------------
+solving tpch_1_2_11000000000.dat
+Solving Data took 0.14171695709228516
+---------------------
+---------------------
+solving tpch_1_2_12000000000.dat
+Solving Data took 0.1408069133758545
+---------------------
+---------------------
+solving tpch_1_2_2000000000.dat
+Solving Data took 0.15642404556274414
+---------------------
+---------------------
+solving tpch_1_2_3000000000.dat
+Solving Data took 0.15038418769836426
+---------------------
+---------------------
+solving tpch_1_2_4000000000.dat
+Solving Data took 0.1792299747467041
+---------------------
+---------------------
+solving tpch_1_2_5000000000.dat
+Solving Data took 0.14469504356384277
+---------------------
+---------------------
+solving tpch_1_2_6000000000.dat
+Solving Data took 0.1410079002380371
+---------------------
+---------------------
+solving tpch_1_2_7000000000.dat
+Solving Data took 0.14929676055908203
+---------------------
+---------------------
+solving tpch_1_2_8000000000.dat
+Solving Data took 0.14225101470947266
+---------------------
+---------------------
+solving tpch_1_2_9000000000.dat
+Solving Data took 0.14425086975097656
+---------------------
+---------------------
+solving tpch_2_1_1000000000.dat
+Solving Data took 0.03368496894836426
+---------------------
+---------------------
+solving tpch_2_1_10000000000.dat
+Solving Data took 0.039225101470947266
+---------------------
+---------------------
+solving tpch_2_1_11000000000.dat
+Solving Data took 0.03981900215148926
+---------------------
+---------------------
+solving tpch_2_1_12000000000.dat
+Solving Data took 0.04138493537902832
+---------------------
+---------------------
+solving tpch_2_1_2000000000.dat
+Solving Data took 0.031323909759521484
+---------------------
+---------------------
+solving tpch_2_1_3000000000.dat
+Solving Data took 0.0401608943939209
+---------------------
+---------------------
+solving tpch_2_1_4000000000.dat
+Solving Data took 0.0402989387512207
+---------------------
+---------------------
+solving tpch_2_1_5000000000.dat
+Solving Data took 0.03975701332092285
+---------------------
+---------------------
+solving tpch_2_1_6000000000.dat
+Solving Data took 0.04199409484863281
+---------------------
+---------------------
+solving tpch_2_1_7000000000.dat
+Solving Data took 0.03943586349487305
+---------------------
+---------------------
+solving tpch_2_1_8000000000.dat
+Solving Data took 0.03989005088806152
+---------------------
+---------------------
+solving tpch_2_1_9000000000.dat
+Solving Data took 0.03907895088195801
+---------------------
+---------------------
+solving tpch_2_2_1000000000.dat
+Solving Data took 7.562154054641724
+---------------------
+---------------------
+solving tpch_2_2_10000000000.dat
+Solving Data took 20.520808935165405
+---------------------
+---------------------
+solving tpch_2_2_11000000000.dat
+Solving Data took 20.185434103012085
+---------------------
+---------------------
+solving tpch_2_2_12000000000.dat
+Solving Data took 19.553966760635376
+---------------------
+---------------------
+solving tpch_2_2_2000000000.dat
+Solving Data took 8.816699266433716
+---------------------
+---------------------
+solving tpch_2_2_3000000000.dat
+Solving Data took 19.10849094390869
+---------------------
+---------------------
+solving tpch_2_2_4000000000.dat
+Solving Data took 22.02094531059265
+---------------------
+---------------------
+solving tpch_2_2_5000000000.dat
+Solving Data took 26.79286813735962
+---------------------
+---------------------
+solving tpch_2_2_6000000000.dat
+Solving Data took 26.007785081863403
+---------------------
+---------------------
+solving tpch_2_2_7000000000.dat
+Solving Data took 26.93672800064087
+---------------------
+---------------------
+solving tpch_2_2_8000000000.dat
+Solving Data took 22.972244024276733
+---------------------
+---------------------
+solving tpch_2_2_9000000000.dat
+Solving Data took 24.535056829452515
+---------------------
