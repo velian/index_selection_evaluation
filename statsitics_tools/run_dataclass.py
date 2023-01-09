@@ -1,7 +1,9 @@
 from dataclasses import dataclass
-from typing import List
+from typing import Dict, List
 from dataclasses_json import dataclass_json
 from pathlib import Path
+import csv
+import ast
 
 @dataclass_json
 @dataclass
@@ -14,7 +16,7 @@ class BenchmarkDataclass:
     config: dict # The config that this run was made with
     benchmark: int # the benchmark this run was made on
     scale_factor: int # the scale factor at which the run was made
-    db_system: int
+    db_system: str
     algorithm: str # name of the algorithm
     budget_in_bytes: int # The budget this run was made with, in bytes
     queries: list[str] # list of all queries this run is associated with.
@@ -29,15 +31,56 @@ class BenchmarkDataclass:
     what_if_cache_hits: int # All the information we have about cache hits
     description: str = "" # Optional particular discription, should more info be necessary
 
-def convert_csv_to_dataclass(identifier: str, timestamp: str, sequence: str, ) -> BenchmarkDataclass:
-
+def convert_csv_to_dataclass(identifier: str, timestamp: str, path: str, sequence: str, descritpion: str) -> BenchmarkDataclass:
+    datarow = convert_timestamp_to_line(path, timestamp)
     data = BenchmarkDataclass(
         identifier,
-
+        timestamp,
+        sequence,
+        ast.literal_eval(datarow[3]),
+        datarow[5],
+        datarow[4],
+        datarow[6],
+        datarow[2],
+        convert_budget(ast.literal_eval(datarow[3])),
+        [],
+        datarow[-1],
+        {},
+        {},
+        calculate_overall_costs(retrieve_query_dicts(datarow)),
+        retrieve_query_dicts(datarow),
+        datarow[7],
+        {},
+        0,
+        0,
+        description=descritpion
     )
+    return data
 
+def convert_timestamp_to_line(path: str, timestamp: str) -> List[str]:
+    with open(path, newline='') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
+        for row in reader:
+            if row[0] == timestamp:
+                return row
 
-    return dataclass
+def convert_budget(config: Dict) -> int:
+    if "budget_MB" in config.keys():
+        return int(config['budget_MB']) * 1000 * 1000
+    else:
+        return int(config['budget']) * 1000 * 1000
 
-def convert_timestamp_to_line() -> List[str]:
-    pass
+def retrieve_query_dicts(line: List) -> List[Dict]:
+    old = line[16:-1]
+    new = []
+    for item in old:
+        new.append(ast.literal_eval(item))
+    return new
+
+def calculate_overall_costs(row: List[Dict]) -> int:
+    total = 0
+    for costs in row:
+        total += float(costs['Cost'])
+    return total
+
+dtat_object = convert_csv_to_dataclass('extend', '2023-01-08 16:38:24', '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_extend_tpch_19_queries.csv', 'baseline', 'Baseline Run for extend')
