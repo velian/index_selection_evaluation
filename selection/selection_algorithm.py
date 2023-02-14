@@ -4,7 +4,7 @@ from typing import Optional, Set
 from selection.index import Index
 from selection.workload import Workload
 
-from .cost_evaluation import CostEvaluation
+from selection.cost_evaluation import CostEvaluation
 
 # If not specified by the user, algorithms should use these default parameter values to
 # avoid diverging values for different algorithms.

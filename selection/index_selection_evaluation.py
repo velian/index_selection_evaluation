@@ -6,6 +6,7 @@ import sys
 import time
 from typing import Any, Dict, Type
 
+<<<<<<< HEAD
 from .algorithms.anytime_algorithm import AnytimeAlgorithm
 from .algorithms.auto_admin_algorithm import AutoAdminAlgorithm
 from .algorithms.cophy_input_generation import CoPhyInputGeneration
@@ -26,6 +27,24 @@ from .selection_algorithm import (
 )
 from .table_generator import TableGenerator
 from .workload import Workload
+=======
+from selection.algorithms.anytime_algorithm import AnytimeAlgorithm
+from selection.algorithms.auto_admin_algorithm import AutoAdminAlgorithm
+from selection.algorithms.cophy_input_generation import CoPhyInputGeneration
+from selection.algorithms.db2advis_algorithm import DB2AdvisAlgorithm
+from selection.algorithms.dexter_algorithm import DexterAlgorithm
+from selection.algorithms.drop_heuristic_algorithm import DropHeuristicAlgorithm
+from selection.algorithms.extend_algorithm import ExtendAlgorithm
+from selection.algorithms.relaxation_algorithm import RelaxationAlgorithm
+from selection.algorithms.cophy_input_expanded import CoPhyExpandedAlgorithm
+from selection.benchmark import Benchmark
+from selection.dbms.hana_dbms import HanaDatabaseConnector
+from selection.dbms.postgres_dbms import PostgresDatabaseConnector
+from selection.query_generator import QueryGenerator
+from selection.selection_algorithm import AllIndexesAlgorithm, NoIndexAlgorithm
+from selection.table_generator import TableGenerator
+from selection.workload import Workload
+>>>>>>> 6e573ff (Unrelative imports)
 
 ALGORITHMS = {
     "anytime": AnytimeAlgorithm,
