@@ -6,28 +6,6 @@ import sys
 import time
 from typing import Any, Dict, Type
 
-<<<<<<< HEAD
-from .algorithms.anytime_algorithm import AnytimeAlgorithm
-from .algorithms.auto_admin_algorithm import AutoAdminAlgorithm
-from .algorithms.cophy_input_generation import CoPhyInputGeneration
-from .algorithms.db2advis_algorithm import DB2AdvisAlgorithm
-from .algorithms.dexter_algorithm import DexterAlgorithm
-from .algorithms.drop_heuristic_algorithm import DropHeuristicAlgorithm
-from .algorithms.extend_algorithm import ExtendAlgorithm
-from .algorithms.relaxation_algorithm import RelaxationAlgorithm
-from .algorithms.cophy_input_expanded import CoPhyExpandedAlgorithm
-from .benchmark import Benchmark
-from .dbms.hana_dbms import HanaDatabaseConnector
-from .dbms.postgres_dbms import PostgresDatabaseConnector
-from .query_generator import QueryGenerator
-from .selection_algorithm import (
-    AllIndexesAlgorithm,
-    NoIndexAlgorithm,
-    SelectionAlgorithm,
-)
-from .table_generator import TableGenerator
-from .workload import Workload
-=======
 from selection.algorithms.anytime_algorithm import AnytimeAlgorithm
 from selection.algorithms.auto_admin_algorithm import AutoAdminAlgorithm
 from selection.algorithms.cophy_input_generation import CoPhyInputGeneration
@@ -41,10 +19,9 @@ from selection.benchmark import Benchmark
 from selection.dbms.hana_dbms import HanaDatabaseConnector
 from selection.dbms.postgres_dbms import PostgresDatabaseConnector
 from selection.query_generator import QueryGenerator
-from selection.selection_algorithm import AllIndexesAlgorithm, NoIndexAlgorithm
+from selection.selection_algorithm import AllIndexesAlgorithm, NoIndexAlgorithm, SelectionAlgorithm
 from selection.table_generator import TableGenerator
 from selection.workload import Workload
->>>>>>> 6e573ff (Unrelative imports)
 
 ALGORITHMS = {
     "anytime": AnytimeAlgorithm,

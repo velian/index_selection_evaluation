@@ -73,12 +73,11 @@ class SelectionAlgorithm:
         logging.debug(f"Cost cache hit ratio:\t{ratio}%")
 
     def _dump_cache(self) -> None:
-        print(f'----------\n{self.parameters}\n{self.global_config}')
-        path = (
+        cache_dump_name = (
             f'cache-{self.global_config["benchmark_name"]}-{self.name}-'
-            + f'{self.parameters["max_index_width"]}-{self.parameters["budget_MB"]}.json'
+            + f'{self.parameters["max_index_width"]}-{self.parameters["budget_MB"]}'
         )
-        self.cost_evaluation.dump_cache(path)
+        self.cost_evaluation.dump_cache(cache_dump_name)
 
 
 class NoIndexAlgorithm(SelectionAlgorithm):

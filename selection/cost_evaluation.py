@@ -1,5 +1,6 @@
 import logging
 import json
+from pathlib import Path
 
 from selection.what_if_index_creation import WhatIfIndexCreation
 
@@ -144,7 +145,7 @@ class CostEvaluation:
         ]
         return frozenset(relevant_indexes)
 
-    def dump_cache(self, path: str) -> None:
+    def dump_cache(self, cache_dump_name: str) -> None:
         """
         Dumps the cache into a Json found at 'path'
         path: The path to dump the cache to. Has to be a real folder.
@@ -152,6 +153,14 @@ class CostEvaluation:
         out_cache = {}
         for key, value in self.cache.items():
             out_cache[str(key)] = value
-        logging.info('Dumping to %s',(path))
-        with open(path, "w+", encoding="utf-8") as file:
+        logging.info('Dumping to %s',cache_dump_name)
+        with open(cache_dump_name + '.json', "w+", encoding="utf-8") as file:
+            json.dump(out_cache, file, indent=4)
+
+        out_cache = {}
+        for key, value in self.relevant_indexes_cache.items():
+            out_cache[str(key)] = str(value)
+
+        logging.info('Dumping to %s', cache_dump_name + '-relevant.json')
+        with open(cache_dump_name + '-relevant.json', 'w+', encoding='utf-8') as file:
             json.dump(out_cache, file, indent=4)
