@@ -103,9 +103,10 @@ def parse_solve(solve_file_path: str, json_path: str) -> Dict[str, str]:
         while not ";" in line:
             contents = line.split()
             if contents[1] == "1":
-                solve_parse_dict["selected_indexes"] += index_dict[contents[0]][
-                    "column_names"
-                ]
+                adjusted_indexes = []
+                for index_name in index_dict[contents[0]]["column_names"]:
+                    adjusted_indexes.append(f'{index_dict[contents[0]]["table_name"]}.{index_name}')
+                solve_parse_dict["selected_indexes"].append(f'{",".join(adjusted_indexes)}')
             line = file.readline().strip()
 
         solve_parse_dict["algorithm_indexes_by_query"] = {}
@@ -120,12 +121,12 @@ def parse_solve(solve_file_path: str, json_path: str) -> Dict[str, str]:
             contents = line.split()
             if contents[2] == "1":
                 solve_parse_dict["algorithm_indexes_by_query"][
-                    contents[1]
+                    'q' + contents[1]
                 ] = convert_index_ids_to_names(
                     combination_dict[contents[0]], index_dict
                 )
-                solve_parse_dict["costs_by_query"][contents[1]] = costs_dict[
-                    contents[1]
+                solve_parse_dict["costs_by_query"]['q' + contents[1]] = costs_dict[
+                    'q' + contents[1]
                 ][contents[0]]
             line = file.readline().strip()
 
@@ -162,7 +163,7 @@ def transform_query_costs(
     costs_dict = {}
 
     for cost_info in query_costs:
-        query_number = str(cost_info["query_number"])
+        query_number = 'q' + str(cost_info["query_number"])
         combination_id = str(cost_info["combination_id"])
         if query_number not in costs_dict:
             costs_dict[query_number] = {}

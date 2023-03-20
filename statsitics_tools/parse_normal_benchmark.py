@@ -73,6 +73,7 @@ def convert_index(index_string: str) -> List[str]:
     """Removes brackets from an index for consistency and legibility"""
     # cuts off the brackets
     index_string = index_string[1:-1]
+    index_string = index_string.replace('C ', "").replace('I','').replace('(', '').replace(')', "")
     return index_string.split(", ")
 
 

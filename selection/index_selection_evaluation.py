@@ -32,7 +32,8 @@ ALGORITHMS = {
     "relaxation": RelaxationAlgorithm,
     "no_index": NoIndexAlgorithm,
     "all_indexes": AllIndexesAlgorithm,
-    "cophy_expanded": CoPhyExpandedAlgorithm
+    "cophy_expanded": CoPhyExpandedAlgorithm,
+    "cophy_optimizer": CophyOptimizer
 }
 
 DBMSYSTEMS = {"postgres": PostgresDatabaseConnector, "hana": HanaDatabaseConnector}

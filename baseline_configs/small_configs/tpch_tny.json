@@ -6,10 +6,10 @@
         {
             "name": "cophy_input",
             "parameters": {
-                "max_index_width": 1,
+                "max_index_width": 2,
                 "max_indexes_per_query": 1,
                 "output_folder": "benchmark_results/cophy",
-                "overwrite": false
+                "overwrite": true
             },
             "timeout": 300
         }

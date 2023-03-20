@@ -214,6 +214,7 @@ class CoPhyInputGeneration(SelectionAlgorithm):
                     "index_id": i + 1,
                     "estimated_size": index.estimated_size,
                     "column_names": index._column_names(),
+                    "table_name": index.table().name,
                 }
             )
             index_ids[index] = i + 1

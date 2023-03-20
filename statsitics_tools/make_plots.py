@@ -35,6 +35,8 @@ def plot_runtime(data: List[BenchmarkDataclass], plot_helper: PlotHelper):
     plt.ylabel("Runtime Algorithm")
     plt.title(f"Algorithm Runtime on {data[0].benchmark}")
     plt.legend()
+    plt.plot()
+    plt.savefig('costs.pdf', format='pdf')
     plt.show()
 
 

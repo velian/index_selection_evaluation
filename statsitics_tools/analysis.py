@@ -123,7 +123,7 @@ def compare_algorithm_costs(
             }
         )
         for query in item.costs_by_query:
-            base_query_set = set(item.algorithm_indexes_by_query)  # TODO rename
+            base_query_set = set(base.algorithm_indexes_by_query[query])  # TODO rename
             compare_query_set = set(
                 item.algorithm_indexes_by_query[query]
             )  # TODO rename
@@ -133,7 +133,7 @@ def compare_algorithm_costs(
                 - base.costs_by_query[query]["Cost"],
                 "shared": list(base_query_set.intersection(compare_query_set)),
                 "compare_only": list(compare_query_set.difference(base_query_set)),
-                "base_only": list(base_query_set.difference(base_query_set)),
+                "base_only": list(base_query_set.difference(compare_query_set)),
             }
     return out_dict
 
