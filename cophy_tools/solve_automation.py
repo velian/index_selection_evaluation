@@ -73,8 +73,15 @@ def mb_to_b(budgets: List[int]) -> List[int]:
         new_budget.append(cost * 1000 * 1000)
     return new_budget
 
+def budget_prepender(filename:str , budgets) -> List[str]:
+    items = []
+    for item in budgets:
+        items.append(filename.replace('500', str(item)))
+    return items
+
 # put cophy input files here
 DATA_FILES = ['/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/cophy/tpcds_cophy_input__width2__per_query2.txt']
+
 
 # This should really be a config :|
 MODEL_PATH = "temp.mod"
@@ -82,8 +89,10 @@ RUN_FILE_PATH = "/Users/Julius/masterarbeit/J-Index-Selection/cophy_tools/run.ru
 AMPL_PATH = '/Users/Julius/masterarbeit/ampl_macos64/ampl'
 SOLVER_PATH = '/Users/Julius/masterarbeit/ampl_macos64/gurobi'
 
-
-budgets = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000]
+# 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000,11500, 12000,12500, 13000,13500,14000, 14500,15000,15500,16000,16500,17000,17500,18000,18500, 19000,19500,
+budgets = [20000]
+DATA_FILES = budget_prepender('/Users/Julius/masterarbeit/J-Index-Selection/ILP/500_tpch_relaxation_3_cache_input.txt', [5000, 10000, 15000, 20000])
+DATA_FILES.extend(budget_prepender('/Users/Julius/masterarbeit/J-Index-Selection/ILP/500_tpch_extend_3_cache_input.txt', [5000, 10000, 15000, 20000]))
 budgets = mb_to_b(budgets)
 
 generate_run_file(RUN_FILE_PATH, SOLVER_PATH)

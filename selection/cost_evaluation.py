@@ -1,4 +1,6 @@
 import logging
+from typing import Set
+from selection.index import Index
 
 from selection.what_if_index_creation import WhatIfIndexCreation
 

@@ -21,6 +21,7 @@ from selection.query_generator import QueryGenerator
 from selection.selection_algorithm import AllIndexesAlgorithm, NoIndexAlgorithm
 from selection.table_generator import TableGenerator
 from selection.workload import Workload
+from selection.algorithms.cophy_optimizer_algorithm import CophyOptimizer
 
 ALGORITHMS = {
     "anytime": AnytimeAlgorithm,
@@ -33,7 +34,6 @@ ALGORITHMS = {
     "relaxation": RelaxationAlgorithm,
     "no_index": NoIndexAlgorithm,
     "all_indexes": AllIndexesAlgorithm,
-    "cophy_expanded": CoPhyExpandedAlgorithm,
     "cophy_optimizer": CophyOptimizer
 }
 
@@ -167,6 +167,7 @@ class IndexSelection:
         indexes = algorithm.calculate_best_indexes(self.workload)
         logging.info(f"Indexes found: {indexes}")
         what_if = algorithm.cost_evaluation.what_if
+        print(f'{config}')
         if "export_cache" in config and config["export_cache"] is True:
             self.export_cache(algorithm.cost_evaluation, config)
 
@@ -219,6 +220,6 @@ class IndexSelection:
         else:
             name_extension = ''
         output_as_ampl(ilp_dict,
-                       f"ILP/{config['parameters']['benchmark_name']}_{config['name']}{name_extension}_cache_input.txt")
+                       f"ILP/{config['parameters']['budget_MB']}_{config['parameters']['benchmark_name']}_{config['name']}{name_extension}_cache_input.txt")
         output_as_json(ilp_dict,
-                       f"ILP/{config['parameters']['benchmark_name']}_{config['name']}{name_extension}_cache_input.json")
+                       f"ILP/{config['parameters']['budget_MB']}_{config['parameters']['benchmark_name']}_{config['name']}{name_extension}_cache_input.json")

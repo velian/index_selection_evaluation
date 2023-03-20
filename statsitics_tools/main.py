@@ -38,28 +38,23 @@ PLOT_RUNTIMES = False
 PLOT_COSTS_BY_QUERY = False
 COMPARE_ALGORITHMS = True
 SAVE_DATACLASSES = True
-COMPARE_ABSOLUTE_DIFFERENCES = True
+COMPARE_ABSOLUTE_DIFFERENCES = False
 
 COMPARISON_BUDGET = 14000000000
 
 plot_helper = PlotHelper()
+
+
 data = convert_normal_csvs(
     [
-        '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_cophy_optimizer_tpcds_90_queries.csv'
+    '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_extend_tpch_19_queries.csv',
+    '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_db2advis_tpch_19_queries.csv',
+    '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_relaxation_tpch_19_queries.csv'
     ],
-    "/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/plans/",
+    '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/plans'
 )
 
-data = data + convert_normal_csvs(
-    [
-    '/Users/Julius/masterarbeit/Masterarbeit-JStreit/data/baseline_measures_2/results_db2advis_tpcds_90_queries.csv',
-    '/Users/Julius/masterarbeit/Masterarbeit-JStreit/data/baseline_measures_2/results_relaxation_tpcds_90_queries.csv',
-    '/Users/Julius/masterarbeit/Masterarbeit-JStreit/data/baseline_measures_2/results_extend_tpcds_90_queries.csv'
-    ],
-    '/Users/Julius/masterarbeit/Masterarbeit-JStreit/data/baseline_plans_2/plans/'
-)
-
-removes = ['db2advis-1', 'db2advis-2', 'db2advis-7', 'extend-1', 'extend-2']
+removes = []
 
 data_cophy = convert_cophy_csvs(
     [
@@ -68,8 +63,9 @@ data_cophy = convert_cophy_csvs(
     [1000000000, 2000000000,3000000000,4000000000,5000000000,6000000000,7000000000,8000000000,9000000000,10000000000,11000000000,12000000000,13000000000,14000000000,15000000000],
 )
 
-data = data + data_cophy
-print(data[-1])
+
+
+# data = data + data_cophy
 
 if OVERALL_COSTS_BREAKDOWN:
     with open("costs.json", "w+", encoding="utf-8") as file:
