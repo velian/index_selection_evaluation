@@ -5,6 +5,7 @@
     "algorithms": [
         {
             "name": "cophy_input",
+            "enumeration": "query-based",
             "parameters": {
                 "max_index_width": 1,
                 "max_indexes_per_query": 1,
@@ -16,6 +17,7 @@
         },
         {
             "name": "cophy_input",
+            "enumeration": "query-based",
             "parameters": {
                 "max_index_width": 1,
                 "max_indexes_per_query": 2,
@@ -27,6 +29,7 @@
         },
         {
             "name": "cophy_input",
+            "enumeration": "query-based",
             "parameters": {
                 "max_index_width": 2,
                 "max_indexes_per_query": 1,
@@ -38,6 +41,7 @@
         },
         {
             "name": "cophy_input",
+            "enumeration": "query-based",
             "parameters": {
                 "max_index_width": 3,
                 "max_indexes_per_query": 1,
@@ -49,6 +53,7 @@
         },
         {
             "name": "cophy_input",
+            "enumeration": "query-based",
             "parameters": {
                 "max_index_width": 1,
                 "max_indexes_per_query": 3,
@@ -60,6 +65,7 @@
         },
         {
             "name": "cophy_input",
+            "enumeration": "query-based",
             "parameters": {
                 "max_index_width": 2,
                 "max_indexes_per_query": 2,
