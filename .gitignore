@@ -11,6 +11,7 @@ query_0.sql
 **.dat
 **.mod
 **.solve
+**.pdf
 cophy_tools/**.run
 cophy_json/**
 user_configs/**
