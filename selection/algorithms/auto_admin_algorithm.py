@@ -53,7 +53,6 @@ class AutoAdminAlgorithm(SelectionAlgorithm):
                 potential_indexes = indexes | self.create_multicolumn_indexes(
                     workload, indexes
                 )
-        self.result_indexes = set(indexes)
         return indexes
 
     def select_index_candidates(self, workload, potential_indexes):

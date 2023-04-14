@@ -15,7 +15,7 @@ from selection.workload import Workload
 DEFAULT_PARAMETERS = {
     "max_index_width": 1,
     "max_indexes_per_query": 1,
-    "enumeration": "full",
+    "enumeration": "query-based",
     "output_folder": "benchmark_results/cophy",
     "overwrite": True,
 }

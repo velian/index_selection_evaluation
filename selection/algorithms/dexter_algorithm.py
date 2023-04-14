@@ -75,5 +75,4 @@ class DexterAlgorithm(SelectionAlgorithm):
                     index_columns.append(columns)
 
         indexes = [Index(c) for c in index_columns]
-        self.result_indexes = set(indexes)
         return

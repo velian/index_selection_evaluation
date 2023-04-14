@@ -44,5 +44,4 @@ class DropHeuristicAlgorithm(SelectionAlgorithm):
                     f"{len(remaining_indexes)} indexes remaining."
                 )
             )
-        self.result_indexes = set(remaining_indexes)
         return remaining_indexes
