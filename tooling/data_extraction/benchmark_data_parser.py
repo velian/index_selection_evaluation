@@ -1,17 +1,21 @@
-from typing import List
+"""Contains the functions that """
 import csv
+from pathlib import Path
+from typing import List
 
-from parse_normal_benchmark import (
-    extract_entries,
+from tooling.benchmark_dataclass import BenchmarkDataclass
+from tooling.data_extraction.parse_ampl_benchmark import extract_cophy_entries
+from tooling.data_extraction.parse_normal_benchmark import (
     calculate_overall_costs,
+    extract_entries,
     retrieve_query_dicts,
 )
-from benchmark_dataclass import BenchmarkDataclass
-from parse_ampl_benchmark import extract_cophy_entries
 
 
 def convert_normal_csvs(
-    data_paths: List[str], plans_path: str
+    data_paths: List[Path],
+    plans_path: Path,
+    comment: str = "",
 ) -> List[BenchmarkDataclass]:
     """
     This gets a list of normal CSV files for selection
@@ -20,20 +24,21 @@ def convert_normal_csvs(
     data: List[BenchmarkDataclass] = []
 
     for item in data_paths:
-        data += extract_entries(item, "for plotting", plans_path)
+        data += extract_entries(item, comment, plans_path)
+    data.sort(key=lambda x: x.budget_in_bytes)
     return data
 
 
 def convert_cophy_csvs(
-    data_paths: List[str], budgets: List[int]
+    data_paths: List[Path], budgets: List[int], comment: str = ""
 ) -> List[BenchmarkDataclass]:
     """
-    This gets COPHY style CSVs and converts them into benchmar Dataclasses
+    This gets COPHY style CSVs and converts them into benchmark Dataclasses
     """
     data: List[BenchmarkDataclass] = []
 
     for item in data_paths:
-        data += extract_cophy_entries(item, "for_plotting", budgets)
+        data += extract_cophy_entries(item, comment, budgets)
     return data
 
 

@@ -1,5 +1,6 @@
 """
-Module has function to read selection module output csvs and converts them into a dataclass for easier handling
+Module has function to read selection module output
+csvs and converts them into a dataclass for easier handling
 """
 
 import ast
@@ -8,8 +9,9 @@ import json
 import os
 from pathlib import Path
 from typing import Dict, List, Set
+from tooling.util import convert_b_to_mb
 
-from benchmark_dataclass import BenchmarkDataclass
+from tooling.benchmark_dataclass import BenchmarkDataclass
 
 
 def convert_normal_row_to_dataclass(
@@ -27,13 +29,11 @@ def convert_normal_row_to_dataclass(
         data_row[4],
         data_row[6],
         data_row[2],
-        convert_budget_to_mb(ast.literal_eval(data_row[3])),
+        get_byte_budget_from_config(ast.literal_eval(data_row[3])),
+        convert_b_to_mb(get_byte_budget_from_config(ast.literal_eval(data_row[3]))),
         queries,
         convert_index(data_row[-1]),
         index_combination_extraction(data_row[0], plans_path),
-        index_combination_extraction(
-            data_row[0], plans_path
-        ),  # Optimizer indexes == Algorithm indexes in this context
         calculate_overall_costs(retrieve_query_dicts(data_row)),
         convert_query_costs_list_to_dict(queries, retrieve_query_dicts(data_row)),
         float(data_row[7]),
@@ -61,7 +61,7 @@ def extract_entries(
     return data_objects
 
 
-def convert_budget_to_mb(config: Dict) -> int:
+def get_byte_budget_from_config(config: Dict) -> int:
     """Converts a byte size to a megabyte size"""
     if "budget_MB" in config.keys():
         return int(config["budget_MB"]) * 1000 * 1000
@@ -73,7 +73,12 @@ def convert_index(index_string: str) -> List[str]:
     """Removes brackets from an index for consistency and legibility"""
     # cuts off the brackets
     index_string = index_string[1:-1]
-    index_string = index_string.replace('C ', "").replace('I','').replace('(', '').replace(')', "")
+    index_string = (
+        index_string.replace("C ", "")
+        .replace("I", "")
+        .replace("(", "")
+        .replace(")", "")
+    )
     return index_string.split(", ")
 
 
@@ -117,11 +122,13 @@ def save_all_to_json(
 
 
 def normalize_index_name(name: str) -> None:
-    """Removes the id from the beginning of an index name so it can be compared."""
+    """Removes the id from the beginning of an index name so it can be compared.
+    Also converts the format to the normal format"""
     cutoff = name.find(">")
     if not cutoff == -1:
-        return name[cutoff + 1 :]
-    return name
+        name = name[cutoff + 1 :]
+    name = name.replace("btree_", "")
+    return name.replace("_", ".", 1)
 
 
 def rec_plan_search(node: Dict, indexes: Set[str]) -> None:

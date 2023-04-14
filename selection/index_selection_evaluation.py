@@ -213,6 +213,8 @@ class IndexSelection:
             "index_sizes": [],
             "index_combinations": [],
             "query_costs": [],
+            "name": config['parameters']['benchmark_name'],
+            "budget_mb": config['parameters']['budget_MB'],
         }
         fill_ilp_dict(ilp_dict, self.workload, indexes, query_costs_for_index_combination, query_costs_without_indexes)
         if config['name'] in ['extend', 'anytime', 'relaxation', 'db2advis']:

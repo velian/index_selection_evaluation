@@ -34,9 +34,9 @@ INDEX_CONFIGS_BY_BUDGET = True
 INDEXES_BY_BUDGET = True
 COSTS_BY_QUERY = True
 PLOT_OVERALL_COSTS = True
-PLOT_RUNTIMES = False
+PLOT_RUNTIMES = True
 PLOT_COSTS_BY_QUERY = False
-COMPARE_ALGORITHMS = True
+COMPARE_ALGORITHMS = False
 SAVE_DATACLASSES = True
 COMPARE_ABSOLUTE_DIFFERENCES = False
 
@@ -47,25 +47,28 @@ plot_helper = PlotHelper()
 
 data = convert_normal_csvs(
     [
-    '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_extend_tpch_19_queries.csv',
-    '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_db2advis_tpch_19_queries.csv',
-    '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_relaxation_tpch_19_queries.csv'
+        "/Users/Julius/masterarbeit/Masterarbeit-JStreit/data/baseline_measures_2/results_relaxation_tpcds_90_queries.csv",
+        "/Users/Julius/masterarbeit/Masterarbeit-JStreit/data/baseline_measures_2/results_extend_tpcds_90_queries.csv",
+        "/Users/Julius/masterarbeit/Masterarbeit-JStreit/data/baseline_measures_2/results_db2advis_tpcds_90_queries.csv",
+        "/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_cophy_optimizer_tpcds_90_queries.csv",
     ],
-    '/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/plans'
+    "/Users/Julius/masterarbeit/Masterarbeit-JStreit/data/baseline_plans_2/",
 )
-
-removes = []
 
 data_cophy = convert_cophy_csvs(
     [
         "/Users/Julius/masterarbeit/J-Index-Selection/benchmark_results/results_cophy_input_tpcds_90_queries.csv"
     ],
-    [1000000000, 2000000000,3000000000,4000000000,5000000000,6000000000,7000000000,8000000000,9000000000,10000000000,11000000000,12000000000,13000000000,14000000000,15000000000],
+    construct_budgets(1000000000, 20000000000, 500000000),
 )
 
+# solves/tpch_cophy_input__width1__per_query1.txt-11500000000-out.solve
+# solves/tpch_cophy_input__width2__per_query1.txt-11500000000-out.solve
 
+data = data + data_cophy
 
-# data = data + data_cophy
+ignores = ["db2advis-7", "db2advis-2", "db2advis-1", "extend-1", "extend-2"]
+data = [x for x in data if x.sequence not in ignores]
 
 if OVERALL_COSTS_BREAKDOWN:
     with open("costs.json", "w+", encoding="utf-8") as file:
@@ -106,9 +109,20 @@ if COMPARE_ALGORITHMS:
 
 if PLOT_OVERALL_COSTS:
     # TPCH =46164891.51 TPCDS=121150974.81
-    plot_overall_costs(data, removes, 121150974, plot_helper)
+    ignores = ["db2advis-7", "db2advis-2", "db2advis-1", "extend-1", "extend-2"]
+    nu_data = [x for x in data if x.sequence not in ignores]
+    plot_overall_costs(nu_data, [], 121150974, plot_helper)
 
 if PLOT_RUNTIMES:
+    ignores = [
+        "db2advis-7",
+        "db2advis-2",
+        "db2advis-1",
+        "extend-1",
+        "extend-2",
+        "cophy_optimizer-99",
+    ]
+    nu_data = [x for x in data if x.sequence not in ignores]
     plot_runtime(data, plot_helper)
 
 if PLOT_COSTS_BY_QUERY:
@@ -123,6 +137,3 @@ if SAVE_DATACLASSES:
             encoding="utf-8",
         ) as file:
             file.write(item.to_json(indent=4, sort_keys=True))
-
-
-print("ff")

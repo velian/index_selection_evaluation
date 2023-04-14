@@ -372,7 +372,7 @@ def output_as_ampl(cophy_dict: Dict, file_path: str = None) -> None:
     handle.write(";\n\n")
 
     for combi_dict in cophy_dict["index_combinations"]:
-        index_ids_str = ' '.join(map(str, combi_dict["index_ids"]))
+        index_ids_str = ''.join(map(str, combi_dict["index_ids"]))
         handle.write(
             f'set indexes_per_combination[{combi_dict["combination_id"]}]:= '
             f'{index_ids_str};\n'

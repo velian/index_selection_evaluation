@@ -13,6 +13,9 @@ black = "*"
 flake8 = "*"
 isort = "*"
 dataclasses-json = "*"
+texttable = "*"
+latextable = "*"
+wcwidth = "*"
 
 [requires]
 python_version = "3.1"

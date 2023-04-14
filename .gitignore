@@ -12,7 +12,6 @@ query_0.sql
 **.mod
 **.solve
 **.pdf
-cophy_tools/**.run
 cophy_json/**
 user_configs/**
 ILP/**
@@ -31,11 +30,10 @@ benchmark_results/**/*_what_if_graph.pdf
 benchmark_results/**/*_cost_estimation.pdf
 benchmark_results/cophy/**.**
 
-cost_by_query.json
-costs.json
-cost_sort.json
-equal_indexes.json
-indexes_by_budget.json
-indexes.json
-algorithm_comparison.json
 dataclasses/**
+plot_helper_config.json
+solve_automation_config.json
+**.run
+**.pickle
+**.model
+**.tex

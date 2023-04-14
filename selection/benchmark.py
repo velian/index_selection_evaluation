@@ -54,7 +54,8 @@ class Benchmark:
         self.db_connector.drop_indexes()
 
         logging.info("Benchmark with config: {}".format(self.config))
-        # Number of runs can be set to 0 to get estimated workload
+        logging.info("Current System Time : %s" % datetime.datetime.now())
+        # Number of runs can beset to 0 to get estimated workload
         # costs. Estimated sizes are returned instead of actual index sizes
         # to avoid creating the indexes.
         if self.number_of_runs > 0:

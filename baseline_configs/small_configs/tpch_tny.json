@@ -7,7 +7,7 @@
             "name": "cophy_input",
             "parameters": {
                 "max_index_width": 2,
-                "max_indexes_per_query": 1,
+                "max_indexes_per_query": 2,
                 "output_folder": "benchmark_results/cophy",
                 "overwrite": true
             },

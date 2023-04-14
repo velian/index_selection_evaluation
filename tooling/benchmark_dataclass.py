@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import os
 from typing import Dict, List
 from dataclasses_json import dataclass_json
 
@@ -40,10 +41,10 @@ class BenchmarkDataclass:
     db_system: str
     algorithm: str
     budget_in_bytes: int
+    budget_in_mb: int
     queries: list[str]
     selected_indexes: list[str]
     algorithm_indexes_by_query: dict[str, List[str]]
-    optimizer_indexes_by_query: dict
     overall_costs: int
     costs_by_query: dict[str, Dict[str, str]]
     time_run_total: float
@@ -52,3 +53,51 @@ class BenchmarkDataclass:
     cost_requests: int
     what_if_cache_hits: int
     description: str = ""
+
+
+def load_benchmark_dataclasses_from_files(
+    sequence: str, budgets: List[int], dataclass_folder: str = "dataclasses"
+) -> list[BenchmarkDataclass]:
+    """
+    This generates a list of benchmark dataclasses based on a sequence name.
+    Budgets should be given in b.
+    """
+    dataclasses = []
+
+    for budget in budgets:
+        file_candidate = f"{dataclass_folder}/{sequence}_{budget}.json"
+        if os.path.isfile(file_candidate):
+            with open(file_candidate, "r", encoding="utf-8") as file:
+                dataclasses.append(BenchmarkDataclass.from_json(file.read()))
+        else:
+            raise IOError(f"file {file_candidate} does not exist.")
+
+    return dataclasses
+
+
+def load_benchmark_dataclass_from_file(
+    sequence: str, budget: str, dataclass_folder: str = "dataclasses"
+) -> BenchmarkDataclass:
+    """
+    Loads a BenchmarkDataclass from Json.
+    """
+    file_candidate = f"{dataclass_folder}/{sequence}_{budget}.json"
+    if os.path.isfile(file_candidate):
+        with open(file_candidate, "r", encoding="utf-8") as file:
+            return BenchmarkDataclass.from_json(file.read())
+    else:
+        raise IOError(f"file {file_candidate} does not exist.")
+
+
+def save_benchmark_dataclasses(
+    data: List[BenchmarkDataclass], dataclass_folder: str = "dataclasses"
+) -> None:
+    """Saves a list of benchmark dataclasses to Json."""
+    os.makedirs(dataclass_folder, exist_ok=True)
+    for item in data:
+        with open(
+            f"{dataclass_folder}/{item.sequence}_{item.budget_in_bytes}.json",
+            "w+",
+            encoding="utf-8",
+        ) as file:
+            file.write(item.to_json(indent=4, sort_keys=True))
