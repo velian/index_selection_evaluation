@@ -44,7 +44,7 @@ def decomposition_solve(
     print(benchmark, ampl_data_file)
     print(number_of_combinations, fixed_combinations)
 
-    folder_prefix = Path(f'{benchmark}_{config["decomp_solves_path"]}/{solve_name}')
+    folder_prefix = Path(f'{config["decomp_solves_path"]}/{benchmark}_{solve_name}')
     print(folder_prefix)
     folder_prefix.mkdir(parents=True, exist_ok=True)
 
