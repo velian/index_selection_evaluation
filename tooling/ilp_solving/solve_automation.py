@@ -97,6 +97,8 @@ def load_solver_config(
         "ampl_path": "",
         "solver_path": "",
         "solves_path": "",
+        "decomp_solves_path": "",
+        "decomp_model_path": ""
     }
 
     if not config_file.is_file():
@@ -116,7 +118,7 @@ def load_solver_config(
             raise FileNotFoundError(f'{target} : {str(path)} does not exist.')
 
 
-    for target in ['solves_path', 'model_path', 'run_file_path']:
+    for target in ['solves_path', 'model_path', 'run_file_path', 'decomp_solves_path', 'decomp_model_path']:
         path = Path(config[target])
         if not path.exists():
             if path.suffix:

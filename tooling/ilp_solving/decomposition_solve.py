@@ -28,7 +28,10 @@ def decomposition_solve(
         json_file: Path,
         ampl_file: Path,
         number_of_chunks,
-        config: Dict[str, str]
+        config: Dict[str, str],
+        max_budget: int,
+        min_budget: int,
+        step: int,
         ) -> None:
     ampl = config['ampl_path']
     print(ampl)
@@ -41,7 +44,11 @@ def decomposition_solve(
     print(benchmark, ampl_data_file)
     print(number_of_combinations, fixed_combinations)
 
-    budgets = range(500, 15001, 500)
+    folder_prefix = Path(f'{benchmark}_{config["decomp_solves_path"]}/{solve_name}')
+    print(folder_prefix)
+    folder_prefix.mkdir(parents=True, exist_ok=True)
+
+    budgets = range(min_budget, max_budget+1, step)
 
     if number_of_chunks == 1:
         suffix = '_solution'
@@ -51,9 +58,8 @@ def decomposition_solve(
     fixed_combination_str = '{' + ', '.join(map(str, fixed_combinations)) + '}'
 
     for budget in budgets:
-        file_name = f'{benchmark}_decomposition_{solve_name}_budget{budget}_chunks{number_of_chunks}{suffix}.txt'
-        cmd_file = f'{benchmark}_decomposition_{solve_name}_budget{budget}_chunks{number_of_chunks}_solve_chunks.cmd'
-
+        file_name = f'{str(folder_prefix)}/{benchmark}_decomposition_{solve_name}_budget{budget}_chunks{number_of_chunks}{suffix}.txt'
+        cmd_file = f'{str(folder_prefix)}/{benchmark}_decomposition_{solve_name}_budget{budget}_chunks{number_of_chunks}_solve_chunks.cmd'
 
         with open(cmd_file, 'w+') as f:
             f.write(template.substitute(
@@ -97,8 +103,8 @@ def decomposition_solve(
                         combinations.add(token)
         combination_string = ', '.join(combinations)
 
-        file_name2 = f'{benchmark}_decomposition_{solve_name}_budget{budget}_chunks{number_of_chunks}_solution.txt'
-        cmd_file2 = f'{benchmark}_decomposition_{solve_name}_budget{budget}_chunks{number_of_chunks}_solve.cmd'
+        file_name2 = f'{str(folder_prefix)}/{benchmark}_decomposition_{solve_name}_budget{budget}_chunks{number_of_chunks}_solution.txt'
+        cmd_file2 = f'{str(folder_prefix)}/{benchmark}_decomposition_{solve_name}_budget{budget}_chunks{number_of_chunks}_solve.cmd'
 
 
         with open(cmd_file2, 'w') as f:
@@ -114,18 +120,3 @@ def decomposition_solve(
             )
         p = subprocess.Popen([ampl, f'{cmd_file2}'])
         p.wait()
-
-
-if __name__ == '__main__':
-    pass
-    # Examples
-
-    # TPC-H
-    # main('tpch', 'extend_2_cache', number_of_chunks=2)
-    # main('tpch', 'extend_3_cache', number_of_chunks=2)
-    # main('tpch', 'cophy__width2__per_query2__query-based', number_of_chunks=5)
-
-    # TPC-DS
-    # main('tpcds', 'extend_2_cache', number_of_chunks=20)
-    # main('tpcds', 'extend_3_cache', number_of_chunks=20)
-    # main('tpcds', 'cophy__width2__per_query2__query-based', number_of_chunks=100)
