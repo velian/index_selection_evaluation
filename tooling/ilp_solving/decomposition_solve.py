@@ -73,7 +73,7 @@ def decomposition_solve(
                 file_name=file_name
                 )
             )
-        p = subprocess.Popen([ampl, f'{cmd_file}'])
+        p = subprocess.run([ampl, f'{cmd_file}'])
 
 
         if number_of_chunks == 1:
@@ -118,5 +118,4 @@ def decomposition_solve(
                 file_name2=file_name2
                 )
             )
-        p = subprocess.Popen([ampl, f'{cmd_file2}'])
-        p.wait()
+        p = subprocess.run([ampl, f'{cmd_file2}'])
