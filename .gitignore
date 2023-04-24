@@ -37,3 +37,5 @@ solve_automation_config.json
 **.pickle
 **.model
 **.tex
+**.cmd
+**cache_compare**
